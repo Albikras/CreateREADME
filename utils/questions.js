@@ -1,3 +1,8 @@
+/**
+ * There were to many questions so i placed them within there own file to keep my code looking
+ * clean.  This is the questions array where the the questions that will be asked to the user
+ * are displayed in there code here
+ */
 const questions = [
     {
         type: 'input',
@@ -75,7 +80,7 @@ const questions = [
 {
         type: 'input',
         name: 'creditsContent',
-        message: 'Enter your collaborators, add there github links, if there are none jsut write N/A',
+        message: 'Enter your collaborators, add there github links, if there are none just write N/A',
         when: (answers) => answers.credits === true
 },
 {
@@ -87,7 +92,7 @@ const questions = [
         type: 'list',
         name: 'licenseContent',
         message: 'What License did you use? (Use Arrow Keys)',
-        choices: [' license preferred by the community','Mit License','GNU GPLv3','N/A'],
+        choices: ['nothing','Unlicensed','GNU AGPLv3','GNU GPLv3','GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','MIT License','Boost Software License 1.0'],
         when: (answers) => answers.license === true
 },
 {
@@ -98,7 +103,7 @@ const questions = [
 {
         type: 'list',
         name: 'badgesContent',
-        message: [''],
+        message: ['nothing','Unlicensed','GNU AGPLv3','GNU GPLv3','GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','MIT License','Boost Software License 1.0'],
         when: (answers) => answers.badges === true
 },
 {
@@ -107,7 +112,7 @@ const questions = [
         message: 'Did you want to include features in your README'
 },
 {
-        type: 'input',////////////////////////////////////////////////////////////////
+        type: 'input',
         name: 'featureContent',
         message: 'Enter your features here',
         when: (answers) => answers.feature === true
@@ -149,7 +154,7 @@ const questions = [
 {
         type: 'input',
         name: 'linksContent',
-        message: 'Enter your links here(remeber its right click in the terminal for paste)',
+        message: 'Enter your links here(remember its right click in the terminal for paste)',
         when: (answers) => answers.links === true
 },
 {
@@ -171,5 +176,7 @@ const questions = [
 
 }]
 
-
+/**
+ * used to export this file to another file/javascript
+ */
 module.exports = questions

@@ -1,5 +1,7 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+/**
+ * funtion for the license badge, used a switch stament out of easa and it looks much cleaner then a bunch of if statements
+ * depending on what badge you choose it will pick and then later display the proper badge choosen
+ */
 function renderLicenseBadge(license) {
 
   let badges = '';
@@ -24,18 +26,52 @@ function renderLicenseBadge(license) {
       return badges += '![Boost Software License 1.0](https://img.shields.io/badge/license-Boost%20Software%20License%201.0-lightgrey.svg)';
   }
 }
+/**
+ * function for the license link, once again used a switch statement for the same reason as stated before will give the user 
+ * the link based on the value they choose for there license
+ */
+function renderLicenseLink(license) {
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+  let links = ''
+  switch (license){
+    case 'nothing':
+      return links;
+    case 'Unlicensed':
+      return links += '[Unlicensed Link](https://choosealicense.com/licenses/unlicense/)';
+    case 'GNU AGPLv3':
+      return links += '[GNU AGPLv3 Link](https://choosealicense.com/licenses/agpl-3.0/)';
+    case 'GNU GPLv3':
+      return links += '[GNU GPLv3 Link](https://choosealicense.com/licenses/gpl-3.0/)';
+    case 'GNU LGPLv3':
+      return links += '[GNU LGPLv3 Link](https://choosealicense.com/licenses/lgpl-3.0/)';
+    case 'Mozilla Public License 2.0':
+      return links += '[Mozilla Public License 2.0 Link](https://choosealicense.com/licenses/mpl-2.0/)';
+    case 'Apache License 2.0':
+      return links += '[Apache License 2.0 Link](https://choosealicense.com/licenses/apache-2.0/)';
+    case 'MIT License':
+      return links += '[MIT License Link](https://choosealicense.com/licenses/mit/)';
+    case 'Boost Software License 1.0':
+      return links += '[Boost Software License 1.0 Link](https://choosealicense.com/licenses/bsl-1.0/)';
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+/**
+ * function to generate the README had to slightly adjust the starter code due to the fact I used a lot of confirms and the
+ * if statements did not agree with the return statment being at the start.  Basically this function will generate the README
+ * based on the input of the user and will also display it in proper format
+ */
 function generateMarkdown(data) {
   let markdown = `# ${data.title}`;
+  if(data.badges === true){
+    markdown += `\n\n## Badges\n\n`
+    // if(data.badgesContent){
+
+    // }
+  }
   if(data.description === true){
     markdown += `\n\n## Description\n\n`
     markdown += `* Motivation: ${data.motivation}\n`;
@@ -68,24 +104,18 @@ function generateMarkdown(data) {
 
     // }
   }
-  if(data.badges === true){
-    markdown += `\n\n## Badges\n\n`
-    // if(data.badgesContent){
-
-    // }
-  }
   if(data.feature === true){
     markdown += `\n\n## Feature\n\n`
     markdown += `${featureContent}\n`
   }
   if(data.contribute === true){
     markdown += `\n\n## How To Contribute\n\n`
-    // if(data.contributeFeatures === 'Yourself'){
-
-    // }
-    // if(data.contributeFeatures === 'Contribute Covenant'){
-
-    // }
+    if(data.contributeFeatures === 'Yourself'){
+      markdown += `${data.yourself}\n`
+    }
+    else{
+      markdown += `[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)\n`
+    }
   }
   if(data.tests === true){
     markdown += `\n\n## Tests\n\n`
@@ -101,4 +131,7 @@ function generateMarkdown(data) {
   }
   return markdown;
 }
+/**
+ * used to export the generateMarkdown function to the index.js page
+ */
 module.exports = generateMarkdown;
