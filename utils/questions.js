@@ -1,6 +1,6 @@
 /**
  * There were to many questions so i placed them within there own file to keep my code looking
- * clean.  This is the questions array where the the questions that will be asked to the user
+ * clean. This is the questions array where the the questions that will be asked to the user
  * are displayed in there code here
  */
 const questions = [
@@ -8,7 +8,6 @@ const questions = [
         type: 'input',
         name: 'title',
         message: 'What is the title of your application',
-
 },
 {
         type: 'confirm',
@@ -101,12 +100,6 @@ const questions = [
         message: 'Did you want to included Badges in your README'
 },
 {
-        type: 'list',
-        name: 'badgesContent',
-        message: ['nothing','Unlicensed','GNU AGPLv3','GNU GPLv3','GNU LGPLv3','Mozilla Public License 2.0','Apache License 2.0','MIT License','Boost Software License 1.0'],
-        when: (answers) => answers.badges === true
-},
-{
         type: 'confirm',
         name: 'feature',
         message: 'Did you want to include features in your README'
@@ -173,7 +166,6 @@ const questions = [
         name: 'screenshotContentTwo',
         message: 'Enter your screenshot image path here ex. assets/images/screenshot.png',
         when: (answers) => answers.screenshots === true
-
 }]
 
 /**

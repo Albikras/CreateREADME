@@ -6,9 +6,18 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const questions = require('./utils/questions')
 
+
+
 /**
- * function to initialize the program starts the question process then after writes the 
- * README file based on users answers
+ * This function writes the file based on the user input and also logs if there was an error
+ * or not
+ */
+function writeToFile(fileName) {
+    fs.writeFile('./codedREADME/README.md', fileName, (err)=>
+    err ? console.log('error') : console.log('Success!'))
+}
+/**
+ * function to initialize the program starts the question process
  */
 function init(){
     inquirer
@@ -17,9 +26,7 @@ function init(){
             console.log(data);
 
             const READMEPageContent = generateMarkdown(data);
-
-            fs.writeFile('README.md', READMEPageContent, (err)=>
-            err ? console.log('error') : console.log('Success!'))
+            writeToFile(READMEPageContent);
         })
 }
 init();

@@ -9,21 +9,21 @@ function renderLicenseBadge(license) {
     case 'nothing':
       return badges;
     case 'Unlicensed':
-      return badges += '![The Unlicense](https://img.shields.io/badge/license-Unlicense-brightgreen.svg)';
+      return badges += '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
     case 'GNU AGPLv3':
-      return badges += '![GNU AGPLv3](https://img.shields.io/badge/license-GNU%20AGPLv3-green.svg)';
+      return badges += '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)';
     case 'GNU GPLv3':
-      return badges += '![GNU GPLv3](https://img.shields.io/badge/license-GNU%20GPLv3-yellowgreen.svg)';
+      return badges += '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
     case 'GNU LGPLv3':
-      return badges += '![GNU LGPLv3](https://img.shields.io/badge/license-GNU%20LGPLv3-yellow.svg)';
+      return badges += '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)';
     case 'Mozilla Public License 2.0':
-      return badges += '![Mozilla Public License 2.0](https://img.shields.io/badge/license-Mozilla%20Public%20License%202.0-orange.svg)';
+      return badges += '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)';
     case 'Apache License 2.0':
-      return badges += '![Apache License 2.0](https://img.shields.io/badge/license-Apache%20License%202.0-red.svg)';
+      return badges += '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
     case 'MIT License':
-      return badges += '![MIT License](https://img.shields.io/badge/license-MIT%20License-blue.svg)';
+      return badges += '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
     case 'Boost Software License 1.0':
-      return badges += '![Boost Software License 1.0](https://img.shields.io/badge/license-Boost%20Software%20License%201.0-lightgrey.svg)';
+      return badges += '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
   }
 }
 /**
@@ -37,27 +37,35 @@ function renderLicenseLink(license) {
     case 'nothing':
       return links;
     case 'Unlicensed':
-      return links += '[Unlicensed Link](https://choosealicense.com/licenses/unlicense/)';
+      return links += '[Unlicensed](https://choosealicense.com/licenses/unlicense/)';
     case 'GNU AGPLv3':
-      return links += '[GNU AGPLv3 Link](https://choosealicense.com/licenses/agpl-3.0/)';
+      return links += '[GNU AGPLv3](https://choosealicense.com/licenses/agpl-3.0/)';
     case 'GNU GPLv3':
-      return links += '[GNU GPLv3 Link](https://choosealicense.com/licenses/gpl-3.0/)';
+      return links += '[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)';
     case 'GNU LGPLv3':
-      return links += '[GNU LGPLv3 Link](https://choosealicense.com/licenses/lgpl-3.0/)';
+      return links += '[GNU LGPLv3](https://choosealicense.com/licenses/lgpl-3.0/)';
     case 'Mozilla Public License 2.0':
       return links += '[Mozilla Public License 2.0 Link](https://choosealicense.com/licenses/mpl-2.0/)';
     case 'Apache License 2.0':
-      return links += '[Apache License 2.0 Link](https://choosealicense.com/licenses/apache-2.0/)';
+      return links += '[Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)';
     case 'MIT License':
-      return links += '[MIT License Link](https://choosealicense.com/licenses/mit/)';
+      return links += '[MIT License](https://choosealicense.com/licenses/mit/)';
     case 'Boost Software License 1.0':
-      return links += '[Boost Software License 1.0 Link](https://choosealicense.com/licenses/bsl-1.0/)';
+      return links += '[Boost Software License 1.0](https://choosealicense.com/licenses/bsl-1.0/)';
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+/**
+ * this functions gets the license information based on the switrch statement aboove and returns it to the markdown function
+ */
+function renderLicenseSection(license) {
+
+  const link = renderLicenseLink(license);
+let markdown = '';
+  markdown += `\n\n## license\n\n`
+  markdown += `This program is done under the license: ${link}`;
+return markdown;
+}
 
 /**
  * function to generate the README had to slightly adjust the starter code due to the fact I used a lot of confirms and the
@@ -66,11 +74,10 @@ function renderLicenseSection(license) {}
  */
 function generateMarkdown(data) {
   let markdown = `# ${data.title}`;
+  let licenseSection = renderLicenseBadge(data.badges)
   if(data.badges === true){
     markdown += `\n\n## Badges\n\n`
-    // if(data.badgesContent){
-
-    // }
+    markdown += renderLicenseBadge(data.licenseContent);
   }
   if(data.description === true){
     markdown += `\n\n## Description\n\n`
@@ -99,14 +106,11 @@ function generateMarkdown(data) {
     markdown += `${data.creditsContent}\n`
   }
   if(data.license === true){
-    markdown += `\n\n## license\n\n`
-    // if(data.licenseContent){
-
-    // }
+   markdown += renderLicenseSection(data.licenseContent);
   }
   if(data.feature === true){
     markdown += `\n\n## Feature\n\n`
-    markdown += `${featureContent}\n`
+    markdown += `${data.featureContent}\n`
   }
   if(data.contribute === true){
     markdown += `\n\n## How To Contribute\n\n`
