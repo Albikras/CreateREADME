@@ -60,4 +60,5 @@ Github: https://github.com/Albikras/CreateREADME
 
 ## Recording
 
-[![Recording of Application]](./Video/2023-05-26%2021-09-12.mp4)
+https://github.com/Albikras/CreateREADME/assets/124819029/a56f8831-84ba-4ccf-8a7c-359aec6b964c
+
