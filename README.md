@@ -2,29 +2,29 @@
 
 ## Description
 
-* My motivation for this project was to have an easy accessible way to create a Readme file for my programing needs
+- My motivation for this project was to have an easy accessible way to create a Readme file for my programing needs
 
-* I built this program for the same reasons I was motivated to create it to help myself with creating a Read me i have a template saved but this program is much simpler,
-and easier to use
+- I built this program for the same reasons I was motivated to create it to help myself with creating a Read me i have a template saved but this program is much simpler,
+  and easier to use
 
-* The problem it mainly solves is to create a Read me based on a user criteria with ease, the problem it solves specifically for me is that it saves time.  it is much faster
-to use this code to create a Read me then to create one by hand, this program will save me time with future projects.
+- The problem it mainly solves is to create a Read me based on a user criteria with ease, the problem it solves specifically for me is that it saves time. it is much faster
+  to use this code to create a Read me then to create one by hand, this program will save me time with future projects.
 
-* What i learned during this project/program was the use of the when function when writing the inquirer, it works very similar to an if statement when paired with the confirm
-type input.  What i also learned was the use of continuously adding to one variable, before writing this code i was a little confused as to how i was gonna add all the backtick string
-files to generateMarkdown function.  After a bit of searching on the internet and asking my T.A i learned you can just add to a variable like i did within the function.  I did not
-I think this was possible with strings. I knew you could do it with numbers so I think it's definitely something I learned and is useful
-
+- What i learned during this project/program was the use of the when function when writing the inquirer, it works very similar to an if statement when paired with the confirm
+  type input. What i also learned was the use of continuously adding to one variable, before writing this code i was a little confused as to how i was gonna add all the backtick string
+  files to generateMarkdown function. After a bit of searching on the internet and asking my T.A i learned you can just add to a variable like i did within the function. I did not
+  I think this was possible with strings. I knew you could do it with numbers so I think it's definitely something I learned and is useful
 
 ## Installations
 
-N/A
+1. Node.Js
+2. Package from node.js called inquirer
 
 ## Usage
 
-![Picture of code working]()
-![Picture of code being finished]()
-![Picture of Created README.md]()
+![Picture of code working](./Images/node_in_progress.png)
+![Picture of code being finished](./Images/completed_terminal.png)
+![Picture of Created README.md](./Images/createdreadme.png)
 
 ## Credits
 
@@ -56,11 +56,8 @@ SOFTWARE.
 
 ## Links
 
-Github:
+Github: https://github.com/Albikras/CreateREADME
 
-Deployed Application: 
+## Recording
 
-## Screenshot
-
-![Screenshot of deployed Application]()
-![Recording of Application]()
+[![Recording of Application]](./Video/2023-05-26%2021-09-12.mp4)

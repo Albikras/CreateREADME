@@ -1,15 +1,15 @@
-# 
+# Title
 
 ## Badges
 
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-* Motivation: 
-* Goal: 
-* Problems Solved: 
-* What I Learned: 
+* Motivation: lorem
+* Goal: lorem
+* Problems Solved: lorem
+* What I Learned: lorem
 
 
 ## Table Of Contents
@@ -22,25 +22,25 @@
 
 ## Installation
 
-
+node.js
 
 
 ## Usage
 
-![]()
+![random image](../images/completed_terminal.png)
 
 ## Credits
 
-
+N/A
 
 
 ## License
 
-This program is done under the license: [Unlicensed](https://choosealicense.com/licenses/unlicense/)
+This program is done under the license: [MIT License](https://choosealicense.com/licenses/mit/)
 
 ## Feature
 
-
+lorm
 
 
 ## How To Contribute
@@ -50,21 +50,21 @@ This program is done under the license: [Unlicensed](https://choosealicense.com/
 
 ## Tests
 
-
+lorem
 
 
 ## Questions
 
-GitHub: hi
+GitHub: Albikras
 
-If you want to reach me with additional question click my email link here: hi
+If you want to reach me with additional question click my email link here: Krasniqi1287@gmail.com
 
 
 ## Links
 
-
+lorem
 
 
 ## Screenshot
 
-![undefined](undefined)
+![random image](../images/createdreadme.png)
