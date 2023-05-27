@@ -62,7 +62,7 @@ function renderLicenseSection(license) {
 
   const link = renderLicenseLink(license);
 let markdown = '';
-  markdown += `\n\n## license\n\n`
+  markdown += `\n\n## License\n\n`
   markdown += `This program is done under the license: ${link}`;
 return markdown;
 }
@@ -123,7 +123,12 @@ function generateMarkdown(data) {
   }
   if(data.tests === true){
     markdown += `\n\n## Tests\n\n`
-    markdown += `${data.testsContent}`
+    markdown += `${data.testsContent}\n`
+  }
+  if(data.quest === true){
+    markdown += `\n\n## Questions\n\n`
+    markdown += `GitHub: ${data.questContent}\n`
+    markdown += `\nIf you want to reach me with additional question click my email link here: ${data.questContentTwo}\n`
   }
   if(data.links === true){
     markdown += `\n\n## Links\n\n`

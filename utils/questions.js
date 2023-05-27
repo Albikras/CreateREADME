@@ -141,6 +141,23 @@ const questions = [
 },
 {
         type: 'confirm',
+        name: 'quest',
+        message: 'Did you want to add a Questions section for your README', 
+},
+{
+        type: 'input',
+        name: 'questContent',
+        message: 'Please enter your Github here',
+        when: (answers) => answers.quest === true
+},
+{
+        type: 'input',
+        name: 'questContentTwo',
+        message: 'Please your Email here',
+        when: (answers) => answers.quest === true
+},
+{
+        type: 'confirm',
         name: 'links',
         message: 'Did you want to include links in your README'
 },
